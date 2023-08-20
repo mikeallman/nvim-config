@@ -1,12 +1,10 @@
 local lsp = require('lsp-zero').preset({})
 
 lsp.ensure_installed({
-	"bashls",
-	"dockerls",
-	"docker_compose_language_service",
 	"gopls",
 	"helm_ls",
 	"lua_ls",
+	"pyright",
 	"ruff_lsp"
 })
 
