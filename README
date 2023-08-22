@@ -1,0 +1,5 @@
+External Dependencies
+
+https://github.com/wbthomason/packer.nvim - nvim package manager
+ripgrep - to get search in telescope working
+npm - to install pyright lsp
