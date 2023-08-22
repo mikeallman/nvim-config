@@ -1,5 +1,13 @@
-vim.opt.nu = true
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
+-- turn on relative line numbers
 vim.opt.relativenumber = true
+vim.opt.nu = true
 
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
@@ -19,4 +27,7 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+
+vim.g.black_use_virtualenv = 0
+
 

@@ -23,7 +23,7 @@ return require('packer').startup(function(use)
 
 	use 'mbbill/undotree'
 
-        use 'tpope/vim-fugitive'
+    use 'tpope/vim-fugitive'
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -40,5 +40,18 @@ return require('packer').startup(function(use)
 			{'L3MON4D3/LuaSnip'},     -- Required
 		}
 	}
+
+
+    use {
+        "windwp/nvim-autopairs",
+        config = function() require("nvim-autopairs").setup {} end
+    }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
 
 end)
