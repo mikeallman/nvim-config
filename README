@@ -1,5 +1,12 @@
-External Dependencies
+# Mike's NVIM Config
 
-https://github.com/wbthomason/packer.nvim - nvim package manager
-ripgrep - to get search in telescope working
-npm - to install pyright lsp
+Simple NVIM setup.
+
+Checkout repo into ~/.config/nvim
+
+### External Dependencies
+
+- https://github.com/wbthomason/packer.nvim - nvim package manager
+- ripgrep - to get search in telescope working
+- npm - to install pyright lsp
+
