@@ -28,13 +28,13 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
-  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.code_action {
-      context = {
-          only = { 'source.organizeImports.ruff' }
-      },
-      apply = true,
-  } end)
+  vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+  -- vim.keymap.set('n', '<space>f', function() vim.lsp.buf.code_action {
+  --     context = {
+  --         only = { 'source.organizeImports.ruff' }
+  --     },
+  --    apply = true,
+  -- } end)
 end
 
 -- Configure `ruff-lsp`.
@@ -49,3 +49,21 @@ require('lspconfig').ruff_lsp.setup {
     }
   }
 }
+
+require('lspconfig').pyright.setup {
+    on_attach = on_attach,
+    settings = {
+        pyright = {
+            autoImportCompletion = true,
+        },
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = 'openFilesOnly',
+                useLibraryCodeForTypes = true,
+                typeCheckingMode = 'on'
+            }
+        }
+    }
+}
+
