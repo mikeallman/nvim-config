@@ -5,11 +5,12 @@ return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 
 	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.2',
+		'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
 	use 'marko-cerovac/material.nvim'
+    use 'overcache/NeoSolarized'
 
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -44,7 +45,10 @@ return require('packer').startup(function(use)
 
     use {
         "windwp/nvim-autopairs",
-        config = function() require("nvim-autopairs").setup {} end
+        event="InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
     }
 
     use {
